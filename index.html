@@ -1,49 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task 16</title>
-    <link rel="stylesheet" href="./assets/CSS/bootstrap.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 16</title>
+  <link rel="stylesheet" href="./assets/CSS/bootstrap.min.css">
 </head>
+
 <body>
-    <div class="container">
-        <div class="my-5">
-            <h1 class="ms-5 text-secondary">Bookmarker</h1>
-            <hr>
-            <div class="py-3 px-2 bg-secondary-subtle rounded-3 shadow-lg">
-                <h5 class="text-center">Bookmark Your Favourite Sites</h5>
-                <label for="sitename" class="form-label d-flex justify-content-center mt-3 fw-bolder">Site Name</label>
-                <input type="text" class="form-control " id="sitename" placeholder="Bookmarker Name">
-                <label for="siteURL" class="form-label d-flex justify-content-center mt-3 fw-bolder">Site URL</label>
-                <input type="text" class="form-control " id="siteurl" placeholder="Website URL">
-                <div class="d-flex justify-content-center pb-4">
-                    <button class="btn btn-primary mt-3" onclick="addURL()">Submit</button>
-                </div>
-                
-            </div>
-            <div class="mt-5">
-                <input type="search" class="form-control" id="exampleFormControlInput1" placeholder="search">
-              </div>
-              <table class="table mt-4">
-                <thead>
-                  <tr>
-                    <th scope="col">Site Name</th>
-                    <th scope="col">Visit</th>
-                    <th scope="col">Delete</th>
-                    <th scope="col">Update</th>
-                  </tr>
-                </thead>
-                <tbody id="tabledata">
-                  
-                </tbody>
-              </table>
+  <div class="container">
+    <div class="my-5">
+      <h1 class="ms-5 text-secondary">Bookmarker</h1>
+      <hr>
+      <div class="py-3 px-2 bg-secondary-subtle rounded-3 shadow-lg">
+        <h5 class="text-center">Bookmark Your Favourite Sites</h5>
+        <label for="sitename" class="form-label d-flex justify-content-center mt-3 fw-bolder">Site Name</label>
+        <input type="text" class="form-control " id="sitename" placeholder="Bookmarker Name">
+        <label for="siteURL" class="form-label d-flex justify-content-center mt-3 fw-bolder">Site URL</label>
+        <input type="text" class="form-control " id="siteurl" placeholder="Website URL">
+        <div class="d-flex justify-content-center pb-4">
+          <button class="btn btn-primary mt-3" onclick="addURL()" id="addbutton">Submit</button>
         </div>
 
+      </div>
+      <div class="mt-5">
+        <input onkeyup="searchsite()" type="search" class="form-control" id="searchbar" placeholder="search">
+      </div>
+      <table class="table mt-4">
+        <thead>
+          <tr>
+            <th scope="col">Site Name</th>
+            <th scope="col">Visit</th>
+            <th scope="col">Delete</th>
+            <th scope="col">Update</th>
+          </tr>
+        </thead>
+        <tbody id="tabledata">
+
+        </tbody>
+      </table>
     </div>
 
+  </div>
 
 
-    <script src="./assets/JS/main.js"></script>
+
+  <script src="./assets/JS/main.js"></script>
 </body>
+
 </html>
