@@ -6,6 +6,12 @@ var updatedindex;
 var siteList = [];
 
 
+if (JSON.parse(localStorage.getItem('site')).length > 0) {
+    siteList = JSON.parse(localStorage.getItem('site'));
+    displaySite(siteList);
+}
+
+
 function addURL() {
     var siteData = {
         siteName: siteName.value,
@@ -16,6 +22,9 @@ function addURL() {
     } else {
         updateSiteList(updatedindex, siteData);
     }
+
+
+    localStorage.setItem('site',JSON.stringify(siteList));
 
     displaySite(siteList);
     cleardata();
@@ -44,6 +53,7 @@ function cleardata() {
 function deletedata(index) {
     siteList.splice(index, 1);
     displaySite(siteList);
+    localStorage.setItem('site',JSON.stringify(siteList));
 }
 
 function updatesite(index) {
