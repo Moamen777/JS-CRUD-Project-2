@@ -13,21 +13,28 @@ if (JSON.parse(localStorage.getItem('site')).length > 0) {
 
 
 function addURL() {
-    var siteData = {
-        siteName: siteName.value,
-        siteURL: siteURL.value,
+
+    if (validateSite()== true) {
+        var siteData = {
+            siteName: siteName.value,
+            siteURL: siteURL.value,
+        }
+        if (button.innerText.toLowerCase() == 'submit') {
+            siteList.push(siteData);
+        } else {
+            updateSiteList(updatedindex, siteData);
+        }
+    
+    
+        localStorage.setItem('site',JSON.stringify(siteList));
+    
+        displaySite(siteList);
+        cleardata();
+    }else{
+        window.alert('site url is wrong')
     }
-    if (button.innerText.toLowerCase() == 'submit') {
-        siteList.push(siteData);
-    } else {
-        updateSiteList(updatedindex, siteData);
-    }
 
-
-    localStorage.setItem('site',JSON.stringify(siteList));
-
-    displaySite(siteList);
-    cleardata();
+    
 }
 
 function displaySite(list) {
@@ -84,4 +91,13 @@ function searchsite(term){
         }
     }
     displaySite(siteSearchList);
+}
+
+function validateSite(){
+    var x = /^https:\/\//gi
+
+    if (x.test(siteURL.value) == true) {
+        return true;
+    }
+    false
 }
